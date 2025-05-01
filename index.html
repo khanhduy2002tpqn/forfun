@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web khùng</title>
+</head>
+<body>
+    <!-- Tạo 1 trang web có 1 cái hình, 1 dòng text "làm người yêu mình nha" và 2 nút bấm "Có" hoặc không -->
+    <h1>Web khùng</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxEYB-FQN0SsqegmEoQefUWwj9ELB64_bvg&s" alt="Hình ảnh ngẫu nhiên" style="width: 300px; height: auto;">
+    <p>Làm người yêu mình nha</p>
+    <!-- Nếu nhấn "Có" với id "yes" sẽ  call hàm hiện ra thông báo "Cảm ơn đã đồng ý" -->
+    <button id="yes" onclick="alert('Cảm ơn đã đồng ý!')">Có</button>
+    <!-- Nếu nhấn "Không" nút "Có" sẽ to ra hơn sau mỗi lần nhấn -->
+    <button id="no">Không</button>
+    <!-- Thêm một số hiệu ứng CSS cho trang web -->
+    <script>
+        // Nếu nhấn "Không" thì nút "Có" sẽ to ra hơn sau mỗi lần nhấn
+        // let yesButton = document.getElementById('yes');
+        let noButton = document.getElementById('no');
+        // let scale = 1.1; // Tỉ lệ phóng to
+        // noButton.addEventListener('click', function() {
+        //     yesButton.style.transform = `scale(${scale})`;
+        //     scale += 0.1; // Tăng tỉ lệ phóng to mỗi lần nhấn
+        // });
+        // Nếu  trỏ chuột hover vào nút không thì đổi nội dung  button thành có và có chức năng như nút có
+        noButton.addEventListener('mouseover', function() {
+            noButton.textContent = 'Có';
+            noButton.onclick = function() {
+                alert('Cảm ơn đã đồng ý!');
+            };
+        });
+        // Nếu không hover thì đổi lại thành không và chức năng như nút không
+        noButton.addEventListener('mouseout', function() {
+            noButton.textContent = 'Không';
+            noButton.onclick = function() {
+                // Khi nhấn nút "Không", không làm gì cả
+            };
+        });
+    </script>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        img {
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+        p {
+            font-size: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #FF5733;
+        }
+        h1:hover {
+            color: #C70039;
+        }
+        img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+    </style>
+</body>
+</html>
